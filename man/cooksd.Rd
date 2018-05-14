@@ -7,16 +7,21 @@
 cooksd(fn, formula, data, family)
 }
 \arguments{
-\item{fn}{Either glm or gamlss.}
+\item{fn}{The function to use for creating the model. Either glm or gamlss.}
 
 \item{formula}{The formula to use in the model.}
 
 \item{data}{The dataframe.}
 
-\item{family}{The family.}
+\item{family}{The distribution family. E.g. "poisson" if using glm. PO or NBI if using gamlss.}
 }
 \value{
 A vector of distances
+
+#' @examples
+cooksd(glm, f, df, "poisson")
+cooksd(gamlss, f, df, PO)
+cooksd(gamlss, f, df, NBI)
 }
 \description{
 Evaluates Cook's Distance.
@@ -25,12 +30,6 @@ Evaluates Cook's Distance.
 Although lm/glm stores the original data in the model at m$data, that is not the case in GAMLSS.
 Therefore, unlike the function cooks.distance which only requires a model parameter, this function requires
 the formula and data.
-}
-\examples{
-cooksd(glm, f, df, "poisson")
-cooksd(gamlss, f, df, PO)
-cooksd(gamlss, f, df, NBI)
-
 }
 \references{
 https://www.ime.usp.br/~abe/lista/pdf1USQwcGBX1.pdf
