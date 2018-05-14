@@ -8,3 +8,4 @@ Description: Diagnostics for the GAMLSS package such as Cook's Distance.
 License: Apache 2
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.0.1
