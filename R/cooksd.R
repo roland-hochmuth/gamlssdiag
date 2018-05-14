@@ -32,7 +32,7 @@ cooksd <- function(fn, formula, data, family) {
   # Evaluate the residuals for the full model
   r <- p - m$y
 
-  # Evaluate sum of squared residuals / ...
+  # Evaluate the residual mean square estimate of the variance using Formula 2.12 in Robust Diagnostic Regression Analysis.
   s2 <- sum(r^2)/(num_observations - num_coefficients)
 
   d <- vector(mode = "double", length = num_observations)
@@ -45,6 +45,7 @@ cooksd <- function(fn, formula, data, family) {
     loo_m <- fn(formula, data=loo_data, family=family, trace=FALSE)
     loo_p <- exp(predict(loo_m, newdata=data, data=loo_data, what=c("mu")))
 
+    # Evaluate Cook's Distance using Formula 2.41 in Robust Diagnostic Regression Analysis.
     d[i] <- sum((loo_p - p)^2) / (num_coefficients*s2)
   }
   return(d)
