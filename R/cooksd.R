@@ -33,7 +33,7 @@ cooksd <- function(fn, formula, data, family) {
   num_observations <- nrow(data)
 
   # Evaluate the residuals for the full model
-  r <- p - df$BTSP
+  r <- p - m$y
 
   # Evaluate sum of squared residuals / ...
   s2 <- sum(r^2)/(num_observations - num_coefficients)
