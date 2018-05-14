@@ -15,10 +15,9 @@ library(psych)     # Procedures for Psychological, Psychometric, and Personality
 #'
 #' @return A vector of distances
 #'
-#' #' @examples
-#' cooksd(glm, f, df, "poisson")
-#' cooksd(gamlss, f, df, PO)
-#' cooksd(gamlss, f, df, NBI)
+#' @examples cooksd(glm, f, df, "poisson")
+#' @examples cooksd(gamlss, f, df, PO)
+#' @examples cooksd(gamlss, f, df, NBI)
 #'
 #' @references https://www.ime.usp.br/~abe/lista/pdf1USQwcGBX1.pdf
 #' @references Robust Diagnostic Regression Analysis, Anthony Atkinson and Marco Riani
