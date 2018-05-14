@@ -1,7 +1,3 @@
-library(tidyverse) # An opinionated collection of R packages designed for data science (https://www.tidyverse.org/).
-library(gamlss)    # Generalized Additive Models for Location, Scale and Shape (http://www.gamlss.com/).
-library(psych)     # Procedures for Psychological, Psychometric, and Personality Research.
-
 #' Evaluates Cook's Distance.
 #'
 #' @note Although lm/glm stores the original data in the model at m$data, that is not the case in GAMLSS.
@@ -21,11 +17,12 @@ library(psych)     # Procedures for Psychological, Psychometric, and Personality
 #'
 #' @references https://www.ime.usp.br/~abe/lista/pdf1USQwcGBX1.pdf
 #' @references Robust Diagnostic Regression Analysis, Anthony Atkinson and Marco Riani
+#' @references http://www.gamlss.com/
 #'
 #' @export
 cooksd <- function(fn, formula, data, family) {
   # Evaluate the full model, m, and predictions, p.
-  m <- fn(formula, data=data, family=family)
+  m <- fn(formula, data=data, family=family, trace=FALSE)
   p <- exp(predict(m, newdata=data, data=data, what=c("mu")))
 
   coefficients <- coef(m)
@@ -45,7 +42,7 @@ cooksd <- function(fn, formula, data, family) {
     loo_data <- filter(data, !row_number() %in% i)
 
     # Evaluate the loo model and predictions
-    loo_m <- fn(formula, data=loo_data, family=family)
+    loo_m <- fn(formula, data=loo_data, family=family, trace=FALSE)
     loo_p <- exp(predict(loo_m, newdata=data, data=loo_data, what=c("mu")))
 
     d[i] <- sum((loo_p - p)^2) / (num_coefficients*s2)
