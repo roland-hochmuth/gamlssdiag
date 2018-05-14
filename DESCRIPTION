@@ -1,0 +1,10 @@
+Package: gamlssdiag
+Type: Package
+Title: GAMLSS Diagnostics
+Version: 0.1.0
+Author: Roland Hochmuth
+Maintainer: The package maintainer <rhochmuth@comcast.net>
+Description: Diagnostics for the GAMLSS package such as Cook's Distance.
+License: Apache 2
+Encoding: UTF-8
+LazyData: true
