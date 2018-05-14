@@ -8,17 +8,16 @@ library(psych)     # Procedures for Psychological, Psychometric, and Personality
 #' Therefore, unlike the function cooks.distance which only requires a model parameter, this function requires
 #' the formula and data.
 #'
-#' @param fn The function to use for creating the model. Either glm or gamlss.
+#' @param fn The function to use when creating the model. Either "glm" or "gamlss".
 #' @param formula The formula to use in the model.
 #' @param data The dataframe.
 #' @param family The distribution family. E.g. "poisson" if using glm. PO or NBI if using gamlss.
 #'
 #' @return A vector of distances
 #'
-#' #' @examples
-#' cooksd(glm, f, df, "poisson")
-#' cooksd(gamlss, f, df, PO)
-#' cooksd(gamlss, f, df, NBI)
+#' @examples cooksd(glm, f, df, "poisson")
+#' @examples cooksd(gamlss, f, df, PO)
+#' @examples cooksd(gamlss, f, df, NBI)
 #'
 #' @references https://www.ime.usp.br/~abe/lista/pdf1USQwcGBX1.pdf
 #' @references Robust Diagnostic Regression Analysis, Anthony Atkinson and Marco Riani
