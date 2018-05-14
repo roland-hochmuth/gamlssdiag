@@ -29,7 +29,7 @@ the formula and data.
 \examples{
 cooksd(glm, f, df, "poisson")
 cooksd(gamlss, f, df, PO)
- cooksd(gamlss, f, df, NBI)
+cooksd(gamlss, f, df, NBI)
 
 }
 \references{

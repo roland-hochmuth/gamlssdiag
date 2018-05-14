@@ -17,7 +17,7 @@ library(psych)     # Procedures for Psychological, Psychometric, and Personality
 #'
 #' @examples cooksd(glm, f, df, "poisson")
 #' @examples cooksd(gamlss, f, df, PO)
-#' @examples  cooksd(gamlss, f, df, NBI)
+#' @examples cooksd(gamlss, f, df, NBI)
 #'
 #' @references https://www.ime.usp.br/~abe/lista/pdf1USQwcGBX1.pdf
 #' @references Robust Diagnostic Regression Analysis, Anthony Atkinson and Marco Riani
